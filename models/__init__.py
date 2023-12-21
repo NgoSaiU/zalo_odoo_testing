@@ -6,3 +6,4 @@ from . import contacts_fun
 from . import setting_inherit
 from . import user_zalo
 from . import res_config_settings
+from . import authorization_zalo

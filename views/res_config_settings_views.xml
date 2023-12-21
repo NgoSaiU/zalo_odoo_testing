@@ -10,22 +10,42 @@
                 <xpath expr="//div[hasclass('settings')]" position="inside">
                     <div class="app_settings_block" data-string="Zalo Settings App" string="Zalo Settings App" data-key="odoo_whatsapp_integration1">
 
-                        <h2>ACCESS_TOKEN</h2>
+                        <h2>ZALO_SETTING_APPLICATION</h2>
                         <div class="row mt16 o_settings_container" id="zalo_settings">
                             <div class="col-12 col-lg-6 o_setting_box">
                                 <div class="o_setting_left_pane"/>
                                 <div class="o_setting_right_pane">
-                                    <span class="o_form_label">ZALO ACCESS TOKEN</span>
+                                    <!-- <span class="o_form_label">CÀI ĐẶT CẤU HÌNH ZALO</span> -->
 
                                     <div class="text-muted content-group mt16">
                                         <label class="col-lg-3" string="access_token" for="access_token"/>
                                         <field name="access_token" class="text-center oe_inline"/>
+                                    </div>
+
+                                    <div class="text-muted content-group mt16">
+                                        <label class="col-lg-3" string="app_id" for="app_id"/>
+                                        <field name="app_id" class="text-center oe_inline"/>
                                         
                                     </div>
 
+                                    <div class="text-muted content-group mt16">
+                                        <label class="col-lg-3" string="secret_key" for="secret_key"/>
+                                        <field name="secret_key" class="text-center oe_inline"/>
+                                        
+                                    </div>
+
+                                    <div class="text-muted content-group mt16">
+                                        <label class="col-lg-3" string="authen_code" for="authen_code"/>
+                                        <field name="authen_code" class="text-center oe_inline"/>
+                                        
+                                    </div>
+
+                            
                                 </div>
+                                <button name="test_button" string="Kết nối" type="object" class="btn-primary" options="{'reload': true}"/>
                             </div>
                         </div>
+
                     </div>
                 </xpath>
 

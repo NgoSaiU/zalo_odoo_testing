@@ -15,12 +15,17 @@ class SendContactMessage(models.TransientModel):
 
     def send_custom_contact_message(self):
         ICP = self.env['ir.config_parameter'].sudo()
+        # access_token = ICP.get_param('odoo_whatsapp_integration1.access_token')
         access_token = ICP.get_param('odoo_whatsapp_integration1.access_token')
-
+        # Cách khác
+        # c1
+        # access_token = self.env['ir.config_parameter'].get_param('odoo_whatsapp_integration1.access_token')
+        # c2
+        # access_token = request.env['ir.config_parameter'].sudo().get_param('odoo_whatsapp_integration1.access_token')
         # print("Access Token:", access_token)
-        # _logger.info("Access Token:")
+        _logger.info("Access Token mới là:")
+        _logger.info(access_token)
         # _logger.info(type(access_token))
-        
         
          # Thao tac gửi
         url = 'https://openapi.zalo.me/v3.0/oa/message/cs'
