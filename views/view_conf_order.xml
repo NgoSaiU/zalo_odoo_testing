@@ -1,0 +1,18 @@
+<odoo>
+    <template id="current_sale_order" name="Order list">
+        <div id="wrap" class="container">
+            <h1>Đơn Hàng Của Bạn</h1>
+            <t t-foreach="orders" t-as="order">
+                <div class="row">
+                    <span t-field="order.name"/>
+                    <span t-field="order.create_date"/>
+                    <span t-field="order.amount_total"/>
+                </div>
+            </t>
+            <a t-att-href="'/order_confirmed?id=' + order.name">Xác nhận đơn hàng</a>
+
+        </div>
+    </template>
+
+</odoo>
+

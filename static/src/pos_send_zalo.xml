@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="odoo_whatsapp_integration1.ReceiptScreen" t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension">
+        <xpath expr="//div[@class='d-flex flex-column m-4']" position="inside">
+
+            <form t-on-submit.prevent="onSendZalo" class="send-email d-flex">
+                <div class="input-group">
+                    <input type="number" class="form-control py-3 bg-view" placeholder="Nhập số điện thoại zalo" t-model="orderUiState.inputPhoneNumber"/>
+                    <button class="send btn px-5"  type="submit">ZALO
+                       <i class="fa fa-paper-plane" aria-hidden="true"/>
+                    </button>
+                </div>
+            </form>
+
+            <!-- <form t-on-submit.prevent="onSendEmail" class="send-email d-flex">
+                <div class="input-email input-group">
+                    <input type="email" class="form-control py-3 bg-view" t-attf-placeholder="Email: {{currentOrder.getEmailItems().join(', ')}}" t-model="orderUiState.inputEmail" />
+                    <button class="send btn px-5" t-att-class="isValidEmail() ? 'highlight btn btn-primary' : 'btn-secondary disabled'" type="submit">
+                        <i class="fa fa-paper-plane" aria-hidden="true" t-ref="order-mail-receipt-button" />
+                    </button>
+                </div>
+            </form> -->
+
+        </xpath>
+    </t>
+</templates>    
+
+<!-- lưu ý phải thay đổi input sđt zalo -->

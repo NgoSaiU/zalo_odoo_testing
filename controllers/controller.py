@@ -139,8 +139,12 @@ class WebhookController(http.Controller):
         else:
             _logger.warning('No code parameter found in the request.')
 
-
-        return "Cấu hình zalo thành công"
+        
+        # Nên trả về 1 trang xml thông báo thành công cho người dùng để đẹp í mà
+        return http.request.render(
+            "odoo_whatsapp_integration1.connect_success",
+            
+        )
 
         # lấy authen code (xong)
         # có thể không cần lưu trữ giá trị authen_code làm gì cho mệt!!

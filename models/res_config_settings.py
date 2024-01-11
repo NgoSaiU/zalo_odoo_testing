@@ -18,6 +18,12 @@ class ResConfigSettings(models.TransientModel):
             'url': 'https://oauth.zaloapp.com/v4/oa/permission?app_id=' + self.app_id + '&redirect_uri=http%3A%2F%2Flocalhost%3A8069%2Fpermission',
         }
     
+    @api.model
+    def get_access_token(self):
+        records = self.env['res.config.settings'].sudo().create({})
+        value = records.get_accessToken
+        _logger.info(value)
+        return value
 
     @api.model
     def get_value(self):
@@ -29,6 +35,10 @@ class ResConfigSettings(models.TransientModel):
     @property
     def get_appid(self):
         return self.app_id
+    
+    @property
+    def get_accessToken(self):
+        return self.access_token
     
 
 

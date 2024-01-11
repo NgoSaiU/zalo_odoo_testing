@@ -1,23 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="res_config_settings_view_form" model="ir.ui.view">
-            <field name="name">res.config.settings.view.form.inherit.hr.fleet</field>
-            <field name="model">res.config.settings</field>
-            <field name="priority" eval="90"/>
-            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//div[hasclass('settings')]" position="inside">
-                    <div class="app_settings_block" data-string="Zalo Settings App" string="Zalo Settings App" data-key="odoo_whatsapp_integration1">
+    <!-- <data> -->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.hr.fleet</field>
+        <field name="model">res.config.settings</field>
+        <!-- <field name="priority" eval="50"/> -->
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!-- <xpath expr="//div[hasclass('settings')]" position="inside"> -->
+            <xpath expr="//form" position="inside">
 
-                        <h2>ZALO_SETTING_APPLICATION</h2>
+                <app data-string= "ZALO SETTING" string= "ZALO SETTING" name="zalo_settings">
+                    <block title="CaiDat ZAlo">
+
+                    </block>
+
+                </app>
+                <div class="row mt16 o_settings_container">
+                    <div id="zalo_other_setting" class="col-xs-12 col-md-12 o_setting_box">
+
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="access_token" class="col-2 col-lg-2 o_light_label"/>
+                            <field name="access_token" />
+                        </div>
+
+
+
+
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="app_id" class="col-2 col-lg-2 o_light_label"/>
+                            <field name="app_id"/>
+                        </div>
+
+
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="secret_key" class="col-2 col-lg-2 o_light_label"/>
+                            <field name="secret_key"/>
+                        </div>
+
+
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="authen_code" class="col-2 col-lg-2 o_light_label"/>
+                            <field name="authen_code"/>
+                        </div>
+
+                        <div class="col-lg-6 col-8 d-flex flex-row-reverse
+                             o_setting_box">
+                            <button name="test_button" string="Kết nối" type="object" class="btn-primary"/>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- <div class="app_settings_block" data-string="Zalo Settings App" string="Zalo Settings App" data-key="odoo_whatsapp_integration1">
+
+                    <setting id="zalo_settings" documentation="https://www.odoo.com/documentation/17.0" title="User can limit the discount amount in the 
+                    sale order line." invisible="not group_discount_per_so_line" help="User can limit the discount amount">
+                        <field name="access_token"/>
+                        <div class="content-group" invisible="not access_token">
+                            <div class="mt16">
+                                <label for="access_token"/>
+                                <field name="access_token"/>
+                            </div>
+                        </div>
+                    </setting> -->
+
+
+                <!-- <h2>ZALO_SETTING_APPLICATION</h2>
                         <div class="row mt16 o_settings_container" id="zalo_settings">
                             <div class="col-12 col-lg-6 o_setting_box">
                                 <div class="o_setting_left_pane"/>
-                                <div class="o_setting_right_pane">
-                                    <!-- <span class="o_form_label">CÀI ĐẶT CẤU HÌNH ZALO</span> -->
+                                <div class="o_setting_right_pane"> -->
+                <!-- <span class="o_form_label">CÀI ĐẶT CẤU HÌNH ZALO</span> -->
 
-                                    <div class="text-muted content-group mt16">
+                <!-- <div class="text-muted content-group mt16">
                                         <label class="col-lg-3" string="access_token" for="access_token"/>
                                         <field name="access_token" class="text-center oe_inline"/>
                                     </div>
@@ -44,15 +112,40 @@
                                 </div>
                                 <button name="test_button" string="Kết nối" type="object" class="btn-primary" options="{'reload': true}"/>
                             </div>
-                        </div>
+                        </div> -->
 
-                    </div>
-                </xpath>
+                <!-- </div> -->
+            </xpath>
 
-            </field>
-        </record>
+        </field>
+    </record>
 
-    </data>
+    <!-- </data> -->
 
 
 </odoo>
+
+<!-- 
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">
+           res.config.settings.view.form.inherit.bg.whatsapp
+        </field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='discount_sale_order_lines']" position="after">
+                <setting id="sale_discount_limit" documentation="https://www.odoo.com/documentation/17.0" title="User can limit the discount amount in the 
+                    sale order line." invisible="not group_discount_per_so_line" help="User can limit the discount amount">
+                    <field name="is_discount_limit"/>
+                    <div class="content-group" invisible="not is_discount_limit">
+                        <div class="mt16">
+                            <label for="discount_limit"/>
+                            <field name="discount_limit"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo> -->

@@ -6,7 +6,8 @@
             <field name="model">res.config.settings</field>
             <field name="inherit_id" ref="base.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[hasclass('app_settings_block')]/div[@name='integration']" position="after">
+                <!-- <xpath expr="//div[hasclass('app_settings_block')]/div[@name='integration']" position="after"> -->
+                <xpath expr="//setting[@id='discount_sale_order_lines']" position="after">
                     <div class="app_setting_block" data-string="Odoo WhatsApp Integration" string="Odoo WhatsApp Integration" data-key="odoo_whatsapp_integration">
                         <div id="direct_whatsapp" modifiers="{}">
                             <h2 modifiers="{}">Zalo Direct Message</h2>

@@ -53,7 +53,7 @@ class SendMessage(models.TransientModel):
             fields = ['body_html']
         returned_fields = fields + ['partner_ids']
         values = dict.fromkeys(res_ids, False)
-        template_values = self.env['mail.template'].with_context(tpl_partners_only=True).browse(template_id).generate_email(res_ids, fields=fields)
+        template_values = self.env['mail.template'].with_context(tpl_partners_only=True).browse(template_id)._generate_template(res_ids, render_fields=fields)
         for res_id in res_ids:
             res_id_values = dict((field, template_values[res_id][field]) for field in returned_fields if
                                  template_values[res_id].get(field))

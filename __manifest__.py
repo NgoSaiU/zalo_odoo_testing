@@ -29,11 +29,28 @@
         'views/template.xml',
         'views/res_config_settings_views.xml',
         'views/setting_inherit_view.xml',
+        'views/view_conf_order.xml',
+        'views/current_saleorder.xml',
+        'views/connect_success.xml',
         'wizard/message_wizard.xml',
         'wizard/wizard.xml',
         'wizard/wizard_contact.xml',
         'wizard/share_action.xml',
     ],
+     'assets': {
+         'web.assets_backend': [
+             'odoo_whatsapp_integration1/static/src/composer_path.js',
+
+         ],
+         'point_of_sale._assets_pos': [
+              # PoS files
+             'odoo_whatsapp_integration1/static/src/psend_zalo.js',
+             'odoo_whatsapp_integration1/static/src/pos_send_zalo.xml',
+            #  'odoo_whatsapp_integration1/static/src/**/*',
+         ],
+
+         
+     },
     'images':['static/description/main.gif'],
     
     'application': True

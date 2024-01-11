@@ -4,7 +4,7 @@
         <field name="name">Whats App Sale template</field>
         <field name="subject">Sales template</field>
         <field name="model_id" ref="sale.model_sale_order"/>
-        <field name="body_html"><![CDATA[<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px;">
+        <field name="body_html"><![CDATA[<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 8px;">
          <div>
             Xin Chào *<t t-out="object.partner_id.name or ''"></t>*,
          </div>
@@ -23,8 +23,12 @@
                     </t>
                 </t>
             </div>
-                Nếu bạn có bất kì câu hỏi nào, xin vui lòng liên hệ với chúng tôi.
+                Nếu bạn có bất kì câu hỏi nào, xin vui lòng liên hệ với chúng tôi. <br>
+                Vui lòng vào đường link bên dưới để xác nhận đơn hàng: <br>
+                http://localhost:8069/shop/cart?id=<t t-out="object.name or ''"></t>
             <div>
+            
+       
             </div>
          </t>
          <t t-else="">
@@ -47,6 +51,7 @@
             <div>
                 Nếu bạn có bất kì câu hỏi nào, xin vui lòng liên hệ với chúng tôi.
             </div>
+            
          </t>
         ]]>
         </field>

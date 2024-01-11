@@ -1,0 +1,10 @@
+<odoo>
+    <template id="inf_suc" name="Order list">
+        <div id="wrap" class="container">
+            <h1>Xác nhận thành công </h1>
+        </div>
+    </template>
+
+</odoo>
+
+
